@@ -1,0 +1,56 @@
+{
+	"extends": [
+		"airbnb-typescript",
+		"airbnb/hooks",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:jest/recommended",
+		"prettier",
+		"plugin:prettier/recommended"
+	],
+	"plugins": ["react", "@typescript-eslint", "jest"],
+	"env": {
+		"browser": true,
+		"es6": true,
+		"jest": true
+	},
+	"globals": {
+		"Atomics": "readonly",
+		"SharedArrayBuffer": "readonly"
+	},
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 2018,
+		"sourceType": "module",
+		"project": "./tsconfig.json"
+	},
+	"rules": {
+		"linebreak-style": "off",
+		"@typescript-eslint/explicit-module-boundary-types": "off",
+		"prettier/prettier": [
+			"error",
+			{
+				"endOfLine": "auto",
+				"useTabs": true,
+				"tabWidth": 4,
+				"singleQuote": false,
+				"printWidth": 140,
+				"jsxSingleQuote": false,
+				"semi": true
+			}
+		],
+		"react/no-did-update-set-state": "off",
+		"no-underscore-dangle": "off",
+		"react/state-in-constructor": "off",
+		"@typescript-eslint/no-explicit-any": "off",
+		"no-param-reassign": "off",
+		"react/require-default-props": "off",
+		"react/destructuring-assignment": "off",
+		"@typescript-eslint/lines-between-class-members": "off",
+		"react/button-has-type": "off",
+		"react/prop-types": "off",
+		"no-plusplus": "off"
+	}
+}

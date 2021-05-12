@@ -1,0 +1,44 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import CalendarExample from "./CalendarExample";
+import "./style.sass";
+import "./calendar.sass";
+import getTestData from "./testdata";
+
+<Meta title="Components/Calendar" component={CalendarExample} />
+
+# Input
+
+The calendar component is a hour calendar for extended timeslot view.
+
+## Default
+
+```jsx
+const [calenderDate, changeDate] = React.useState(dayjs().timestamp());
+const events = React.useMemo(() => getTestData(calenderDate), [calenderDate]);
+return (
+	<div className="onedash-calendar-example">
+		<Calendar dayNum={dayNum} onStartDateChange={changeDate} startDate={calenderDate} hourFrom={hourFrom} hourTo={hourTo}>
+			<CalendarToolbarItem>
+				<button>New Event</button>
+			</CalendarToolbarItem>
+
+			{events?.map((e, i) => (
+				<CalendarItem key={i as any} title={e.name} from={e.from} to={e.to} className="event" />
+			))}
+		</Calendar>
+	</div>
+);
+```
+
+<Canvas>
+	<Story
+		name="Default"
+		args={{
+			hourFrom: 7,
+			hourTo: 22,
+			dayNum: 7,
+			hourHeight: "75px"
+		}}>
+		{(args) => <CalendarExample {...args} />}
+	</Story>
+</Canvas>
