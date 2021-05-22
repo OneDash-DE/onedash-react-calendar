@@ -15,13 +15,16 @@ const CalendarToolbar = (props: FullPageCalendarToolbarProps) => {
 				</div>
 				<div className="right">
 					<div className="period-switch">
-						<button disabled={!todayEnabled} className="toolbar-btn highlight-btn" onClick={props.onToday}>
+						<button
+							disabled={!todayEnabled || props.dateChangeDisabled}
+							className="toolbar-btn highlight-btn"
+							onClick={props.onToday}>
 							{localeMessages()[LocaleCodes.Today]}
 						</button>
-						<button className="nav-btn" onClick={props.onPrevInterval}>
+						<button className="nav-btn" onClick={props.onPrevInterval} disabled={props.dateChangeDisabled}>
 							&lt;
 						</button>
-						<button className="nav-btn" onClick={props.onNextInterval}>
+						<button className="nav-btn" onClick={props.onNextInterval} disabled={props.dateChangeDisabled}>
 							&gt;
 						</button>
 					</div>

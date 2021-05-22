@@ -43,6 +43,7 @@ export interface FullPageCalendarToolbarProps {
 	onToday?: () => void;
 	todayEnabled: boolean;
 	additionalItems?: React.ReactNode[];
+	dateChangeDisabled?: boolean;
 }
 
 export interface CalendarProps {
@@ -69,6 +70,8 @@ export interface CalendarProps {
 	 * Hour height. Defaults to 75px
 	 */
 	hourHeight?: string;
+
+	dateChangeDisabled?: boolean;
 
 	onStartDateChange?: (startDate: number) => void;
 }
