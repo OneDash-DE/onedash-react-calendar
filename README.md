@@ -1,4 +1,4 @@
-# React.js week calendar
+# React.js time calendar
 
 This guide will help you render calendar component with React.js.
 If you're not familiar with setting up a new React web project, please refer to the React documentation.
@@ -37,4 +37,4 @@ return (
 
 ## Styling
 
-Most components come without any style. You can adjust it yourself by CSS. If you like the style in this documentation, you can use our stylesheet from [here](https://github.com/OneDash-DE/onedash-react-calendar/blob/main/src/components/stories/calendar.sass).
+Most components come without any style. You can adjust it yourself by CSS. If you like the style in this documentation, you can use our stylesheet from [here](https://github.com/OneDash-DE/onedash-react-calendar/blob/master/src/components/stories/calendar.sass).
