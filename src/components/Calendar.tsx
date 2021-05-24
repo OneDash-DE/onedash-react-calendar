@@ -268,7 +268,7 @@ export default class Calendar extends Component<CalendarProps, CalendarState> {
 					todayEnabled={!(startOfInterval.isBefore(dayjs()) && endOfInterval.isAfter(dayjs()))}
 					calendarTitle={`${startOfInterval.format("D.MM")} - ${endOfInterval.format("D.MM YYYY")}`}
 					additionalItems={this.getToolbarItems()}
-					buttonsDisabled={this.props.dateChangeDisabled}
+					dateChangeDisabled={this.props.dateChangeDisabled}
 				/>
 				<div className="onedash-calendar-content">
 					<div className="onedash-calendar-head" style={{ gridTemplateColumns: `100px repeat(${dayNum}, 1fr)` }}>
