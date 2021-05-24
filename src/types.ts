@@ -26,6 +26,7 @@ export interface CalendarItemType {
 	child: any;
 	lane: number;
 	laneNum: number;
+	occurence: number;
 }
 export type CalendarItems = CalendarItemType[];
 

@@ -161,7 +161,7 @@ export default class Calendar extends Component<CalendarProps, CalendarState> {
 							to.isSameOrAfter(startOfInterval) &&
 							!(ii === diff && toHour < this.state.hourFrom - 0.5)
 						) {
-							cItems.push({ from, to, origFrom, origTo, child, lane: 1, laneNum: 1 });
+							cItems.push({ from, to, origFrom, origTo, child, occurence: ii, lane: 1, laneNum: 1 });
 						}
 					}
 				}
@@ -213,7 +213,7 @@ export default class Calendar extends Component<CalendarProps, CalendarState> {
 
 	cloneCalendarItems = (calendarItems: CalendarItems) => {
 		return calendarItems.map((item) => {
-			const { child, from, origFrom, origTo, to } = item;
+			const { child, from, origFrom, origTo, to, occurence } = item;
 			const element = React.cloneElement(
 				child,
 				{
@@ -224,7 +224,8 @@ export default class Calendar extends Component<CalendarProps, CalendarState> {
 					style: {
 						...child.props.style,
 						...this.calendarItemStyle(item)
-					}
+					},
+					key: `${child.key}-${occurence}`
 				},
 				[]
 			);
@@ -235,7 +236,6 @@ export default class Calendar extends Component<CalendarProps, CalendarState> {
 
 	getCalendarItemElements = () => {
 		const calendarItems = this.getConflictingCalenderItems();
-
 		return this.cloneCalendarItems(calendarItems);
 	};
 

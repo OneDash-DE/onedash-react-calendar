@@ -19,7 +19,26 @@ const CalendarItem = (props: CalendarItemProps) => {
 	let dateTime;
 	if (diff > 0) {
 		// Multiple days
-		dateTime = `${origFrom.format("D.MM")} - ${origTo.format("D.MM")}`;
+		if (
+			origFrom.get("h") +
+				origFrom.get("m") +
+				origFrom.get("s") +
+				origTo.get("millisecond") +
+				origTo.get("h") +
+				origTo.get("m") +
+				origTo.get("s") +
+				origTo.get("millisecond") ===
+			0
+		) {
+			// Full day event
+			if (diff === 1) {
+				dateTime = origFrom.format("D.MM");
+			} else {
+				dateTime = `${origFrom.format("D.MM")} - ${origTo.subtract(1, "millisecond").format("D.MM")}`;
+			}
+		} else {
+			dateTime = `${origFrom.format("D.MM")} - ${origTo.format("D.MM")}`;
+		}
 	} else {
 		dateTime = `${from.format("HH:mm")} - ${to.format("HH:mm")}`;
 	}
