@@ -35,7 +35,7 @@
 		"@storybook/addon-links": "6.3.8",
 		"@storybook/preset-create-react-app": "3.2.0",
 		"@storybook/react": "6.3.8",
-		"@types/node": "14.17.17",
+		"@types/node": "14.17.19",
 		"@types/react": "17.0.21",
 		"@types/react-dates": "21.8.3",
 		"@types/react-dom": "17.0.9",
